@@ -6,23 +6,29 @@ public class Homework11 {
 	 * variables. The constructor should create and save an
 	 * ArrayList of int values
 	 */
+	 private ArrayList<Integer> aList;
+
 	public Homework11() {
+		aList = new ArrayList<Integer>();
 
 	}
 
 	/* Return the stored ArrayList
 	 */
 	public ArrayList<Integer> getList() {
-
+		return aList;
 	}
 
 	/* Fill the stored array list with integers, starting
-	 * at n and up to, but not including, m. The size of
+	 * at m and up to, but not including, n. The size of
 	 * the resultant ArrayList should be n - m.
 	 */
 	public void problem1(int n, int m) {
-
+		for(int i = m; i < n; i++){
+			aList.add(i);
+		}
 	}
+
 
 	/* Remove from the stored array list all numbers that
 	 * are evenly divisible by n. Remember that when you
@@ -30,7 +36,13 @@ public class Homework11 {
 	 * the right shift their indices down one.
 	 */
 	public void problem2(int n) {
-
+		for(int i = 0; i < aList.size(); i++){
+			int x = aList.get(i);
+			if(x % n == 0){
+				aList.remove(i);
+				i++;
+			}
+		}
 	}
 
 	/* Problem 3:
@@ -38,6 +50,34 @@ public class Homework11 {
 	 * class. Ensure that you create the constructor
 	 * appropriately and import java.util.ArrayList.
 	 */
+
+
+	 public class Homework11A extends Homework11{
+		 private ArrayList<Integer> theList;
+		 public Homework11A(){
+			 theList = getList();
+		 }
+
+
+		 		 public int problem4(){
+					 int answer = 0;
+					 for(int i = 0; i < theList.size(); i++){
+						 int add = theList.get(i);
+						 answer += add;
+					 }
+					 return answer;
+				 }
+				 public void problem2(int n) {
+			 		for(int i = 0; i < theList.size(); i++){
+			 			int x = theList.get(i);
+			 			if(x % n != 0){
+			 				theList.remove(i);
+			 				i++;
+			 			}
+			 		}
+			 	}
+	 }
+
 
 	/* Problem 4:
 	 * Write the method problem4 in the Homework11A
