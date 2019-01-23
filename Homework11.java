@@ -24,7 +24,7 @@ public class Homework11 {
 	 * the resultant ArrayList should be n - m.
 	 */
 	public void problem1(int n, int m) {
-		for(int i = m; i < n; i++){
+		for(int i = n; i < m; i++){
 			aList.add(i);
 		}
 	}
@@ -52,31 +52,6 @@ public class Homework11 {
 	 */
 
 
-	 public class Homework11A extends Homework11{
-		 private ArrayList<Integer> theList;
-		 public Homework11A(){
-			 theList = getList();
-		 }
-
-
-		 		 public int problem4(){
-					 int answer = 0;
-					 for(int i = 0; i < theList.size(); i++){
-						 int add = theList.get(i);
-						 answer += add;
-					 }
-					 return answer;
-				 }
-				 public void problem2(int n) {
-			 		for(int i = 0; i < theList.size(); i++){
-			 			int x = theList.get(i);
-			 			if(x % n != 0){
-			 				theList.remove(i);
-			 				i++;
-			 			}
-			 		}
-			 	}
-	 }
 
 
 	/* Problem 4:
